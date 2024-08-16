@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Kemerdekaan Indonesia ke-79</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #000000;
+            background-image: url('https://telegra.ph/file/9982958b70468dd97f940.jpg');
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: red;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.5);
+            animation: fadeIn 3s ease-in-out infinite alternate;
+            position: fixed; /* Menetapkan posisi tetap */
+            top: 20px; /* Jarak dari atas halaman */
+            left: 50%;
+            transform: translateX(-50%); /* Mengatur posisi horizontal */
+            z-index: 1; /* Pastikan teks berada di atas elemen lain */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flag-container {
+            margin: 0 auto;
+            width: 150px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px; /* Menyediakan ruang untuk teks tetap di atas */
+        }
+
+        .flag {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            animation: rise 3s linear forwards;
+        }
+
+        @keyframes rise {
+            from { bottom: 0; }
+            to { bottom: 300px; }
+        }
+
+        .pole {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 15px;
+            height: 400px;
+            background-color: silver;
+            border-radius: 10px;
+        }
+
+        .base {
+            position: absolute;
+            left: -15px;
+            bottom: -15px;
+            width: 45px;
+            height: 20px;
+            background-color: grey;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .volume-reminder {
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-top: 20px;
+            animation: slideIn 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(5px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .quote {
+            font-size: 0.6em;
+            color: #ffffff;
+            margin-top: 500px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8em;
+            color: #ffffff;
+        }
+
+        audio {
+            display: none;
+        }
+
+        .soundcloud-player {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dirgahayu Republik Indonesia ke-79</h1>
+    <div class="flag-container" id="flag-container">
+        <div class="pole"></div>
+        <div class="base"></div>
+        <div class="flag"></div>
+    </div>
+    <div class="volume-reminder" id="volume-reminder">
+        <p>Naikkan volume Anda untuk mendengarkan lagu "Indonesia Raya"</p>
+    </div>
+    <div class="quote" id="quote">
+        <p>"Merdeka bukan hanya bebas dari penjajahan, tapi juga bebas dari tekanan, untuk berbicara, untuk berpikir, untuk berkreasi, bebas berekspresi , bebas untuk memilih. serta bebas untuk menjadi versi terbaik dari diri sendiri"</p>
+    </div>
+    <div class="soundcloud-player">
+        <p><iframe width="90%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/220484652"></iframe></p>
+    </div>
+    <div class="copyright">
+        &copy; 2024 AP update
+    </div>
+    <audio autoplay>
+        <source src="https://example.com/indonesia_raya.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung audio tag ini.
+    </audio>
+    <script>
+        // Tunggu sampai animasi selesai
+        setTimeout(function() {
+            var flagContainer = document.getElementById('flag-container');
+            var volumeReminder = document.getElementById('volume-reminder');
+            var quote = document.getElementById('quote');
+            if (flagContainer) {
+                flagContainer.style.display = 'none'; // Menghilangkan tiang dan bendera
+            }
+            if (volumeReminder) {
+                volumeReminder.style.display = 'none'; // Menghilangkan teks reminder
+            }
+            if (quote) {
+                quote.style.display = 'block'; // Menampilkan kutipan
+            }
+        }, 3000); // 3000 ms = 3 detik, sesuaikan dengan durasi animasi 'rise'
+    </script>
+</body>
+</html>
